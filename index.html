@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Consulte os feriados nacionais brasileiros por ano.">
+  <title>Atlas — Feriados do Brasil</title>
+  <link rel="stylesheet" href="./style.css">
+  <script src="./script.js" defer></script>
+</head>
+
+<body>
+  <main class="container">
+    <div class="brand">
+      <span>atlas<span class="brand-dot">.</span></span>
+      <span class="country">BRASIL / BR</span>
+    </div>
+
+    <section class="card" aria-labelledby="pageTitle">
+      <header class="header">
+        <span class="eyebrow">TEMPO PARA EXPLORAR</span>
+
+        <h1 id="pageTitle">
+          Seu próximo<br>
+          <span>dia de pausa.</span>
+        </h1>
+
+        <p class="subtitle">
+          Os feriados do Brasil, em um só lugar.<br>
+          Escolha um ano e organize seu calendário.
+        </p>
+      </header>
+
+      <form id="holidayForm" class="form-group">
+        <label for="yearInput">Ano de consulta</label>
+
+        <div class="input-wrapper">
+          <input id="yearInput" name="year" type="number" min="1900" max="2199" step="1" placeholder="Ex.: 2026"
+            required>
+
+          <button id="sendButton" type="submit">
+            Consultar
+            <span aria-hidden="true">↗</span>
+          </button>
+        </div>
+      </form>
+
+      <div id="showCountry" class="results-container" aria-busy="false">
+        <p id="statusMessage" class="sr-only" role="status"></p>
+
+        <div id="emptyState" class="empty-state">
+          <span class="state-marker" aria-hidden="true">+</span>
+          <h2>Um ano. Todas as pausas.</h2>
+          <p>Faça uma consulta para descobrir as datas.</p>
+        </div>
+
+        <div id="loadingState" class="skeleton-list" aria-hidden="true" hidden>
+          <div class="skeleton-card">
+            <div class="skeleton skeleton-icon"></div>
+            <div class="skeleton-content">
+              <div class="skeleton skeleton-title"></div>
+              <div class="skeleton skeleton-text"></div>
+            </div>
+          </div>
+
+          <div class="skeleton-card">
+            <div class="skeleton skeleton-icon"></div>
+            <div class="skeleton-content">
+              <div class="skeleton skeleton-title"></div>
+              <div class="skeleton skeleton-text"></div>
+            </div>
+          </div>
+
+          <div class="skeleton-card">
+            <div class="skeleton skeleton-icon"></div>
+            <div class="skeleton-content">
+              <div class="skeleton skeleton-title"></div>
+              <div class="skeleton skeleton-text"></div>
+            </div>
+          </div>
+        </div>
+
+        <section id="results" aria-labelledby="holydaysYear" hidden>
+          <div class="results-header">
+            <div>
+              <span class="eyebrow">SEU CALENDÁRIO</span>
+              <h2 id="holydaysYear"></h2>
+            </div>
+
+            <span id="holidayCount" class="result-count"></span>
+          </div>
+
+          <div id="holidayList" class="holiday-list"></div>
+
+          <p id="noHolidays" class="empty-message" hidden>
+            Nenhum feriado encontrado para este ano.
+          </p>
+        </section>
+
+        <div id="errorState" class="error-state" role="alert" hidden>
+          <h2>Não foi possível consultar.</h2>
+          <p id="errorMessage"></p>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <span>Datas nacionais. Novos destinos.</span>
+
+      <span>
+        Dados:
+        <a href="https://brasilapi.com.br/" target="_blank" rel="noopener noreferrer">
+          BrasilAPI ↗
+        </a>
+      </span>
+    </footer>
+  </main>
+</body>
+
+</html>
