@@ -97,38 +97,31 @@ input {
   justify-content: space-between;
 }
 
-.toggle-card-btn {
+.dismiss-btn {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 32px;
-  height: 32px;
+  width: 28px;
+  height: 28px;
+  min-height: auto;
   padding: 0;
-  background: var(--background);
-  color: var(--text);
-  border: 1px solid var(--border);
+  margin-left: auto;
+  color: var(--muted);
+  background: transparent;
+  border: 0;
   border-radius: 50%;
   cursor: pointer;
-  transition: background 160ms, transform 200ms;
+  transition: background 160ms, color 160ms;
 }
 
-.toggle-card-btn:hover {
+.dismiss-btn:hover {
+  color: var(--text);
   background: #eaeaea;
 }
 
-.toggle-icon {
+.dismiss-btn span {
   font-size: 18px;
-  font-weight: 600;
   line-height: 1;
-}
-
-.card.collapsed .card-collapsible-content,
-.card.collapsed .card-collapsible-body {
-  display: none;
-}
-
-.card.collapsed .header {
-  padding-bottom: 52px;
 }
 
 .eyebrow {
@@ -492,10 +485,6 @@ a:focus-visible {
 
   .header {
     padding: 36px 24px 26px;
-  }
-
-  .card.collapsed .header {
-    padding-bottom: 36px;
   }
 
   h1 {
