@@ -18,7 +18,9 @@
   background: var(--background);
 }
 
-* {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
@@ -89,6 +91,45 @@ input {
   padding: 52px 48px 30px;
 }
 
+.header-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.toggle-card-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  background: var(--background);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 160ms, transform 200ms;
+}
+
+.toggle-card-btn:hover {
+  background: #eaeaea;
+}
+
+.toggle-icon {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.card.collapsed .card-collapsible-content,
+.card.collapsed .card-collapsible-body {
+  display: none;
+}
+
+.card.collapsed .header {
+  padding-bottom: 52px;
+}
 
 .eyebrow {
   display: block;
@@ -451,6 +492,10 @@ a:focus-visible {
 
   .header {
     padding: 36px 24px 26px;
+  }
+
+  .card.collapsed .header {
+    padding-bottom: 36px;
   }
 
   h1 {

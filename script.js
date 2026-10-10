@@ -5,6 +5,9 @@ const holidayList = document.getElementById("holidayList")
 const holidayYear = document.getElementById("holydaysYear")
 const holidayCount = document.getElementById("holidayCount")
 const statusMessage = document.getElementById("statusMessage")
+const toggleCardBtn = document.getElementById("toggleCardBtn")
+const mainCard = toggleCardBtn.closest(".card")
+const toggleIcon = toggleCardBtn.querySelector(".toggle-icon")
 
 const states = {
   empty: document.getElementById("emptyState"),
@@ -12,6 +15,12 @@ const states = {
   results: document.getElementById("results"),
   error: document.getElementById("errorState"),
 }
+
+toggleCardBtn.addEventListener("click", () => {
+  const isCollapsed = mainCard.classList.toggle("collapsed")
+  toggleCardBtn.setAttribute("aria-expanded", String(!isCollapsed))
+  toggleIcon.textContent = isCollapsed ? "+" : "−"
+})
 
 form.addEventListener("submit", loadData)
 
